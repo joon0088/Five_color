@@ -35,17 +35,16 @@ public class GameManager : MonoBehaviour
     {
         Buyint[t]++;
         int a = t + 1;
-        Debug.Log(a + "???? ?????? ??????" + Buyint[t] + "??");
     }
 
-    public void KneatingFood(int t)
+    public void KneatingFood(int chosenOne)
     {
         if (Food[0] != 0)
         {
             return;
         }
 
-        Food[0] = t;
+        Food[0] = chosenOne;
 
         if (Water)
         {
@@ -75,19 +74,19 @@ public class GameManager : MonoBehaviour
         ShakingFoodAnimator.Play("TimingGameObj");
     }
 
-    public void SelectColorAniStart()
+    public void SelectColorAnimationStart()
     {
         ShakingFoodAnimator.Play("SelectColorGameObj");
     }
 
-    public void SelectColor(int t)
+    public void SelectColor(int chosenOne)
     {
         if (Food[1] != 0)
         {
             return;
         }
 
-        Food[1] = t;
+        Food[1] = chosenOne;
 
         ColorNextBtn.SetActive(true);
     }
@@ -131,9 +130,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void Deco(int t)
+    public void Deco(int chosenOne)
     {
-        int a = t - 1;
+        int a = chosenOne - 1;
         if (Buyint[a] < 1) return;
         Decoint[a]++;
         Buyint[a]--;
