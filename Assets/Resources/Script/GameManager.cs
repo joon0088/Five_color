@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     private bool Water = false;
     public GameObject ShakingFoodObj;
     public GameObject KneatingNextBtn;
+    public GameObject Dough_Step1;
     public GameObject ColorNextBtn;
     public GameObject CowNextBtn;
     public GameObject DecoNextBtn;
@@ -40,6 +41,8 @@ public class GameManager : MonoBehaviour
 
     public void KneatingFood(int t)
     {
+       
+        
         if (Food[0] != 0)
         {
             return;
@@ -50,6 +53,7 @@ public class GameManager : MonoBehaviour
         if (Water)
         {
             KneatingNextBtn.SetActive(true);
+            Dough_Step1.SetActive(true);
         }
     }
 
@@ -59,7 +63,8 @@ public class GameManager : MonoBehaviour
 
         if (Food[0] > 0)
         {
-            KneatingNextBtn.SetActive(true);
+           KneatingNextBtn.SetActive(true);
+           Dough_Step1.SetActive(true);
         }
     }
 
@@ -68,6 +73,7 @@ public class GameManager : MonoBehaviour
         Food[0] = 0;
         Water = false;
         KneatingNextBtn.SetActive(false);
+        Dough_Step1.SetActive(false);
     }
 
     public void TimingGameTransitionAnimationStart()
