@@ -44,6 +44,11 @@ public class TimingGame : MonoBehaviour
         }
     }
 
+    public void Initialize()
+    {
+        nextButton.gameObject.SetActive(false);
+        RestartButtonClick();
+    }
 
 
     public void ChangeCircleSize()

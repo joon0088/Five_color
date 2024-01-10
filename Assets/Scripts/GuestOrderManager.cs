@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GuestOrderController : MonoBehaviour
+public class GuestOrderManager : MonoBehaviour
 {
     public Sprite[] guests;
     public Image guestFrame;
 
     public SongPyeon orderSongPyeon;
+
+    public TextMeshProUGUI songPyeonText;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class GuestOrderController : MonoBehaviour
 
     public void OrderSongPyeon()
     {
-
+        int orderIndex = Random.Range(0, GameManager.Instance.songPyeons.Count);
+        orderSongPyeon = GameManager.Instance.songPyeons[orderIndex];
+        songPyeonText.text = orderSongPyeon.name;
     }
 }

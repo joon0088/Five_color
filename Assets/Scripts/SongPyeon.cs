@@ -7,6 +7,7 @@ using UnityEngine;
 public struct SongPyeon
 {
     public string name;
+    public Sprite image;
     public int flour;
     public int color;
     public int filling;
