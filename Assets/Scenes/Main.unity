@@ -1364,9 +1364,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MakingSongPyeonAnimator: {fileID: 2043915070}
-  GameStart: {fileID: 1481828118}
+  GameStartAnimator: {fileID: 0}
   MakingSongPyeon: {fileID: 2043915068}
-  KneatingNextBtn: {fileID: 1577941457}
+  KneadingNextBtn: {fileID: 0}
   ColorNextBtn: {fileID: 2021765687}
   FillingNextBtn: {fileID: 884000242}
   DecoNextBtn: {fileID: 661213298}
@@ -2622,7 +2622,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 232119161}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: KneatingFlour
+        m_MethodName: KneadingFlour
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2755,7 +2755,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 232119161}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: KneatingAgain
+        m_MethodName: KneadingAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4659,7 +4659,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 232119161}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: KneatingFlour
+        m_MethodName: KneadingFlour
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7352,7 +7352,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 232119161}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: KneatingFlour
+        m_MethodName: KneadingFlour
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8502,7 +8502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626797427}
   m_Layer: 5
-  m_Name: KneatingFlour
+  m_Name: KneadingFlour
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

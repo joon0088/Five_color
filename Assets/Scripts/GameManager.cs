@@ -10,12 +10,12 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     public Animator MakingSongPyeonAnimator;
-    public Animator GameStart;
+    public Animator GameStartAnimator;
 
     private int[] SongPyeonYouMaking = new int[4];
     private bool Water = false;
     public GameObject MakingSongPyeon;
-    public GameObject KneatingNextBtn;
+    public GameObject KneadingNextBtn;
     public GameObject ColorNextBtn;
     public GameObject FillingNextBtn;
     public GameObject DecoNextBtn;
@@ -56,10 +56,10 @@ public class GameManager : MonoBehaviour
 
         scoreText.text = "Score : 0";
 
-        Intialize();
+        Initialize();
     }
 
-    public void Intialize()
+    public void Initialize()
     {
         for (int i = 0; i < SongPyeonYouMaking.Length; i++)
         {
@@ -68,14 +68,14 @@ public class GameManager : MonoBehaviour
 
         correctServe = true;
 
-        KneatingNextBtn.SetActive(false);
+        KneadingNextBtn.SetActive(false);
         ColorNextBtn.SetActive(false);
         FillingNextBtn.SetActive(false);
         Water = false;
 
         MakingSongPyeon.SetActive(false);
 
-        GameStart.Play("GameStart");
+        GameStartAnimator.Play("GameStart");
 
         timingGame.Initialize();
     }
@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
         BoughtDecoItemInt[chosenOne]++;
     }
 
-    public void KneatingFlour(int chosenOne)
+    public void KneadingFlour(int chosenOne)
     {
         if (SongPyeonYouMaking[0] != -1)
         {
@@ -102,7 +102,7 @@ public class GameManager : MonoBehaviour
 
         if (Water)
         {
-            KneatingNextBtn.SetActive(true);
+            KneadingNextBtn.SetActive(true);
         }
     }
 
@@ -112,15 +112,15 @@ public class GameManager : MonoBehaviour
 
         if (SongPyeonYouMaking[0] > -1)
         {
-            KneatingNextBtn.SetActive(true);
+            KneadingNextBtn.SetActive(true);
         }
     }
 
-    public void KneatingAgain()
+    public void KneadingAgain()
     {
         SongPyeonYouMaking[0] = -1;
         Water = false;
-        KneatingNextBtn.SetActive(false);
+        KneadingNextBtn.SetActive(false);
     }
 
     public void TimingGameTransitionAnimationStart()
@@ -214,7 +214,7 @@ public class GameManager : MonoBehaviour
 
     public void CheckOrderAndServe()
     {
-        GameStart.Play("GameStart-Initialize");
+        GameStartAnimator.Play("GameStart-Initialize");
 
         for (int i = 0; i < SongPyeonYouMaking.Length;i++)
         {
@@ -243,7 +243,7 @@ public class GameManager : MonoBehaviour
             scoreText.text = "Score : " + score.ToString();
         }
 
-        Invoke(nameof(Intialize), 3f);
+        Invoke(nameof(Initialize), 3f);
     }
 
 }
