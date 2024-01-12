@@ -76,7 +76,7 @@ public class MoneyController : MonoBehaviour {
 					StartCoroutine(animateButton(objectHit));
 					
 					//add the purchased coins to the available user money
-					availableMoney += 250;
+					availableMoney += 20;
 					
 					//save new amount of money
 					PlayerPrefs.SetInt("PlayerMoney", availableMoney);
@@ -94,7 +94,7 @@ public class MoneyController : MonoBehaviour {
 					
 				case "coinPack-2":
 					StartCoroutine(animateButton(objectHit));
-					availableMoney += 600;
+					availableMoney += 30;
 					PlayerPrefs.SetInt("PlayerMoney", availableMoney);
 					playSfx(coinsCheckout);
 					yield return new WaitForSeconds(1.5f);
@@ -103,7 +103,7 @@ public class MoneyController : MonoBehaviour {
 					
 				case "coinPack-3":
 					StartCoroutine(animateButton(objectHit));
-					availableMoney += 1500;
+					availableMoney += 40;
 					PlayerPrefs.SetInt("PlayerMoney", availableMoney);
 					playSfx(coinsCheckout);
 					yield return new WaitForSeconds(1.5f);

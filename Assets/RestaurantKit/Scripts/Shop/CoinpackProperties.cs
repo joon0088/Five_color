@@ -17,8 +17,8 @@ public class CoinpackProperties : MonoBehaviour {
 	public GameObject priceGo;
 
 	void Start (){
-		nameGo.GetComponent<TextMesh>().text = itemValue + " Coins";
-		priceGo.GetComponent<TextMesh>().text = "Buy for $" + itemPrice;
+		nameGo.GetComponent<TextMesh>().text = itemValue + " Value";
+		priceGo.GetComponent<TextMesh>().text = itemPrice + "won" ;
 	}
 
 }
