@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 219666422}
   - component: {fileID: 219666421}
   m_Layer: 5
-  m_Name: Image-Order
+  m_Name: Image-TalkBalloon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1200,6 +1200,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1662096245}
+  - {fileID: 1660865200}
   m_Father: {fileID: 68450428}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -1364,9 +1365,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MakingSongPyeonAnimator: {fileID: 2043915070}
-  GameStartAnimator: {fileID: 0}
+  GameStartAnimator: {fileID: 1481828118}
   MakingSongPyeon: {fileID: 2043915068}
-  KneadingNextBtn: {fileID: 0}
+  KneadingNextBtn: {fileID: 1577941457}
   ColorNextBtn: {fileID: 2021765687}
   FillingNextBtn: {fileID: 884000242}
   DecoNextBtn: {fileID: 661213298}
@@ -1384,12 +1385,30 @@ MonoBehaviour:
   - {fileID: 1541929074}
   - {fileID: 1139659663}
   - {fileID: 2027623855}
-  songPyeons:
-  - name: "\uB178\uB780\uBC24\uC1A1\uD3B8"
-    image: {fileID: 0}
-    flour: 0
+  guests:
+  - guestName: "\uB3C4\uAE68\uBE44"
+    guestImage: {fileID: 21300000, guid: fbf230f5c8388d64ea060589ce2aec06, type: 3}
+    songpyeonImage: {fileID: 0}
+    songpyeonText: "\uD325 \uB4E4\uC5B4\uAC04 \uB178\uB780\uC0C9 \uAF43 \uC1A1\uD3B8"
+    flour: -1
+    banFlour: -1
     color: 3
-    filling: 1
+    filling: 4
+    banFilling: -1
+    deco: 3
+    banDeco: -1
+  - guestName: "\uD638\uB791\uC774"
+    guestImage: {fileID: 21300000, guid: 110da0948578a5745be9766d7993bfbe, type: 3}
+    songpyeonImage: {fileID: 0}
+    songpyeonText: "\uC194\uC78E \uC7A5\uC2DD \uC465 \uC1A1\uD3B8! \uBC00\uAC00\uB8E8\uC640
+      \uAC74\uD3EC\uB3C4, \uB300\uCD94\uB294 \uC2EB\uC5B4"
+    flour: -1
+    banFlour: 2
+    color: 1
+    filling: -1
+    banFilling: 3
+    deco: 5
+    banDeco: 2
   guestOrderManager: {fileID: 232119162}
   scoreText: {fileID: 472743723}
   timingGame: {fileID: 1748568243}
@@ -1405,17 +1424,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747132fdfb78ba04bba3b0ef7879f541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guests:
-  - {fileID: 21300000, guid: fbf230f5c8388d64ea060589ce2aec06, type: 3}
-  - {fileID: 21300000, guid: 110da0948578a5745be9766d7993bfbe, type: 3}
   guestFrame: {fileID: 68450429}
   orderSongPyeon:
-    name: 
-    image: {fileID: 0}
+    guestName: 
+    guestImage: {fileID: 0}
+    songpyeonImage: {fileID: 0}
+    songpyeonText: 
     flour: 0
+    banFlour: 0
     color: 0
     filling: 0
-  songPyeonText: {fileID: 1662096246}
+    banFilling: 0
+    deco: 0
+    banDeco: 0
+  orderText: {fileID: 1662096246}
+  songpyeonFrame: {fileID: 1660865201}
 --- !u!1 &275040424
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2986,7 @@ GameObject:
   - component: {fileID: 475318914}
   - component: {fileID: 475318913}
   m_Layer: 5
-  m_Name: DecoBtn_2
+  m_Name: DecoBtn_2_jujube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3058,14 +3081,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7388899, g: 1, b: 0.6367924, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d3bfd1fabde8b3b46be01ec240f543b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3461,7 +3484,7 @@ GameObject:
   - component: {fileID: 596552537}
   - component: {fileID: 596552536}
   m_Layer: 5
-  m_Name: DecoBtn_3
+  m_Name: DecoBtn_3_flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3556,14 +3579,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6273585, g: 1, b: 0.9720111, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8161fbcaeb956cc40a64f679639cfe15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5199,7 +5222,7 @@ GameObject:
   - component: {fileID: 916132623}
   - component: {fileID: 916132625}
   m_Layer: 5
-  m_Name: Item_2
+  m_Name: Item_2_jujube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5221,7 +5244,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 860, y: -980}
+  m_AnchoredPosition: {x: 860, y: -1008.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &916132623
@@ -5237,14 +5260,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.7512336, b: 0.5330188, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: d3bfd1fabde8b3b46be01ec240f543b9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5867,7 +5890,7 @@ GameObject:
   - component: {fileID: 1038128411}
   - component: {fileID: 1038128413}
   m_Layer: 5
-  m_Name: Item_3
+  m_Name: Item_3_flower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5889,7 +5912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -1300}
+  m_AnchoredPosition: {x: 220, y: -1328.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038128411
@@ -5905,14 +5928,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.5424528, b: 0.82316333, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 8161fbcaeb956cc40a64f679639cfe15, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6332,7 +6355,7 @@ GameObject:
   - component: {fileID: 1152903929}
   - component: {fileID: 1152903931}
   m_Layer: 5
-  m_Name: Item_5
+  m_Name: Item_5_pine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6354,7 +6377,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 860, y: -1300}
+  m_AnchoredPosition: {x: 860, y: -1328.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1152903929
@@ -6370,14 +6393,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.33061114, g: 0.5, b: 0.2806604, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 131a04f38d6e50e47962c630836890b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6486,7 +6509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -1300}
+  m_AnchoredPosition: {x: 540, y: -1328.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214237874
@@ -6828,7 +6851,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 540, y: -980}
+  m_AnchoredPosition: {x: 540, y: -1008.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1300277117
@@ -8665,6 +8688,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650999346}
   m_CullTransparentMesh: 1
+--- !u!1 &1660865199
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1660865200}
+  - component: {fileID: 1660865202}
+  - component: {fileID: 1660865201}
+  m_Layer: 5
+  m_Name: Image-Order
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1660865200
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660865199}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 219666420}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 200}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1660865201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660865199}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1660865202
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660865199}
+  m_CullTransparentMesh: 1
 --- !u!1 &1662096244
 GameObject:
   m_ObjectHideFlags: 0
@@ -8699,8 +8797,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -1.4199982, y: 0.0010070801}
+  m_SizeDelta: {x: -143.56, y: -200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1662096246
 MonoBehaviour:
@@ -10152,7 +10250,7 @@ GameObject:
   - component: {fileID: 2060395559}
   - component: {fileID: 2060395558}
   m_Layer: 5
-  m_Name: DecoBtn_5
+  m_Name: DecoBtn_5_pine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10247,14 +10345,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.627451, b: 0.63106143, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 131a04f38d6e50e47962c630836890b3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10441,7 +10539,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 220, y: -980}
+  m_AnchoredPosition: {x: 220, y: -1008.6155}
   m_SizeDelta: {x: 220, y: 220}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2072823865

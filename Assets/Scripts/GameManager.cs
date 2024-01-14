@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     
     private int score;
 
-    public List<SongPyeon> songPyeons = new List<SongPyeon>();
+    public List<GuestAndOrder> guests = new List<GuestAndOrder>();
 
     public GuestOrderManager guestOrderManager;
 
@@ -197,6 +197,8 @@ public class GameManager : MonoBehaviour
         UsedDecoItemInt[chosenOne]++;
         BoughtDecoItemInt[chosenOne]--;
         BoughtDecoItemText[chosenOne].text = BoughtDecoItemInt[chosenOne].ToString();
+
+        SongPyeonYouMaking[3] = chosenOne;
     }
 
     public void DecoAgain()
@@ -210,38 +212,99 @@ public class GameManager : MonoBehaviour
                 BoughtDecoItemText[i].text = BoughtDecoItemInt[i].ToString();
             }
         }
+
+        SongPyeonYouMaking[3] = -1;
     }
 
     public void CheckOrderAndServe()
     {
         GameStartAnimator.Play("GameStart-Initialize");
 
-        for (int i = 0; i < SongPyeonYouMaking.Length;i++)
+        int correctCount = 0;
+        int addScore = 0;
+            
+        if (SongPyeonYouMaking[0] == guestOrderManager.orderSongPyeon.flour)
         {
-            if (SongPyeonYouMaking[0] != guestOrderManager.orderSongPyeon.flour)
+            correctCount += 1;          
+        }
+        else 
+        {
+            if (guestOrderManager.orderSongPyeon.flour == -1)
             {
-                Debug.Log("Fail!");
-                correctServe = false;
-            }
-
-            if (SongPyeonYouMaking[1] != guestOrderManager.orderSongPyeon.color)
-            {
-                Debug.Log("Fail!");
-                correctServe = false;
-            }
-
-            if (SongPyeonYouMaking[2] != guestOrderManager.orderSongPyeon.filling)
-            {
-                Debug.Log("Fail!");
-                correctServe = false;
+                correctCount += 1;
             }
         }
 
-        if (correctServe == true)
+        if (SongPyeonYouMaking[0] == guestOrderManager.orderSongPyeon.banFlour)
         {
-            score += 30;
-            scoreText.text = "Score : " + score.ToString();
+            correctCount -= 1;
         }
+
+
+
+        if (SongPyeonYouMaking[1] == guestOrderManager.orderSongPyeon.color)
+        {
+            correctCount += 1;
+        }
+
+
+        if (SongPyeonYouMaking[2] == guestOrderManager.orderSongPyeon.filling)
+        {
+            correctCount += 1;
+        }     
+        else
+        {
+            if (guestOrderManager.orderSongPyeon.filling == -1)
+            {
+                correctCount += 1;
+            }
+        }
+
+
+        if (SongPyeonYouMaking[2] == guestOrderManager.orderSongPyeon.banFilling)
+        {
+            correctCount -= 1;
+        }
+
+
+
+        if (SongPyeonYouMaking[3] == guestOrderManager.orderSongPyeon.deco)
+        {
+            correctCount += 1;
+        }
+        else 
+        {
+            if (guestOrderManager.orderSongPyeon.deco == -1)
+            {
+                correctCount += 1;
+            }
+        }
+
+
+        if (SongPyeonYouMaking[3] == guestOrderManager.orderSongPyeon.banDeco)
+        {
+            correctCount -= 1;
+        }
+
+
+
+        Debug.Log("correctCount : " + correctCount);
+
+        if (correctCount > 0 && correctCount <= 1)
+        {
+            addScore = 20;
+        }
+        else if (correctCount > 1 && correctCount <= 2)
+        {
+            addScore = 50;
+        }
+        else if (correctCount >= 3)
+        {
+            addScore = 100;
+        }
+
+        score += addScore;
+        scoreText.text = "Score : " + score.ToString();
 
         Invoke(nameof(Initialize), 3f);
     }

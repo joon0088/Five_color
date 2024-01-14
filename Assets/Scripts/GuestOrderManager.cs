@@ -6,30 +6,33 @@ using UnityEngine.UI;
 
 public class GuestOrderManager : MonoBehaviour
 {
-    public Sprite[] guests;
     public Image guestFrame;
 
-    public SongPyeon orderSongPyeon;
+    public GuestAndOrder orderSongPyeon;
 
-    public TextMeshProUGUI songPyeonText;
+    public TextMeshProUGUI orderText;
+
+    public Image songpyeonFrame;
 
     // Start is called before the first frame update
     void Start()
     {
-        RandomGuest();
-        OrderSongPyeon();
+        // RandomGuest();
+        SetGuestAndOrder();
     }
 
-    public void RandomGuest()
-    {
-        int guestIndex = Random.Range(0, guests.Length);
-        guestFrame.sprite = guests[guestIndex];
-    }
+    //public void RandomGuest()
+    //{
+    //    int guestIndex = Random.Range(0, guests.Length);
+    //    guestFrame.sprite = guests[guestIndex];
+    //}
 
-    public void OrderSongPyeon()
+    public void SetGuestAndOrder()
     {
-        int orderIndex = Random.Range(0, GameManager.Instance.songPyeons.Count);
-        orderSongPyeon = GameManager.Instance.songPyeons[orderIndex];
-        songPyeonText.text = orderSongPyeon.name;
+        int orderIndex = Random.Range(0, GameManager.Instance.guests.Count);
+        orderSongPyeon = GameManager.Instance.guests[orderIndex];
+        orderText.text = orderSongPyeon.songpyeonText;
+        songpyeonFrame.sprite = orderSongPyeon.songpyeonImage;
+        guestFrame.sprite = orderSongPyeon.guestImage;
     }
 }
