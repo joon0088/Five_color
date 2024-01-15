@@ -1556,7 +1556,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShakingFoodAnimator: {fileID: 2043915070}
   ShakingFoodObj: {fileID: 2043915068}
-  KneatingNextBtn: {fileID: 0}
+  KneatingNextBtn: {fileID: 1577941457}
   Dough_Step1: {fileID: 0}
   ColorNextBtn: {fileID: 2021765687}
   CowNextBtn: {fileID: 884000242}
@@ -8529,7 +8529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1577941458
 RectTransform:
   m_ObjectHideFlags: 0

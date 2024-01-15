@@ -4,7 +4,6 @@ using UnityEngine;
 using TMPro;
 
 
-
 public class GameManager : MonoBehaviour
 {
     public Animator ShakingFoodAnimator;
@@ -52,8 +51,8 @@ public class GameManager : MonoBehaviour
 
         if (Water)
         {
-           // KneatingNextBtn.SetActive(true);
-           // Dough_Step1.SetActive(true);
+            KneatingNextBtn.SetActive(true);
+            //Dough_Step1.SetActive(true);
         }
     }
 
@@ -63,8 +62,8 @@ public class GameManager : MonoBehaviour
 
         if (Food[0] > 0)
         {
-          // KneatingNextBtn.SetActive(true);
-          // Dough_Step1.SetActive(true);
+            KneatingNextBtn.SetActive(true);
+            //Dough_Step1.SetActive(true);
         }
     }
 
